@@ -1,12 +1,12 @@
 # Detach a volume
 # To attach a volume set the state to be present, and absent to detach
 
-- name: Detach a volume
+- name: Manage attachments
   hosts: localhost
   tasks:
-  - name: Manage attachments
+  - name: Detach volume
     os_server_volume:
       state: absent 
       server: vm
-      volume: testvolume
+      volume: ansible_volume
       device: /dev/sdb

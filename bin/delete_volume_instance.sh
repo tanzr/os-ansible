@@ -11,4 +11,3 @@ function usage {
 ansible-playbook -e "hosts=localhost" lib/detach_volume.yaml
 ansible-playbook -e "hosts=localhost" lib/delete_volume.yaml
 ansible-playbook -e "hosts=localhost" lib/delete_instance.yaml
-

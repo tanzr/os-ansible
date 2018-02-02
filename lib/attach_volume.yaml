@@ -1,12 +1,19 @@
 # Attach a volume
 # To attach a volume set the state to be present, and absent to detach
 
-- name: Attach a volume
+- name: Manage attachments
   hosts: localhost
   tasks:
-  - name: Manage attachments
+  - name: Attach volume
     os_server_volume:
       state: present 
       server: vm
-      volume: testvolume
+      volume: ansible_volume
       device: /dev/sdb
+
+# To mount the attached volume
+# ssh <vm>@<ip>
+# sudo -i
+# mkfs.ext4 /dev/sdb
+# mount /dev/sdb /tmp/ -t ext4
+# echo "Test" >> /tmp/testvolume.txt
