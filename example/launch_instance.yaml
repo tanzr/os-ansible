@@ -1,4 +1,8 @@
 # Launch an instance
+# Flavor list: m1.tiny, m1.small, m1.medium, m1.large
+# Network list: dualStack, IPv6
+# Image list: e.g. GOLD CentOS 7, GOLD Fedora 27, GOLD Ubuntu 17.04, GOLD Debian 9
+
 - name: Launch an instance
   hosts: localhost
   become: no
@@ -8,9 +12,24 @@
         state: present
         name: vm
         #availability_zone:
-        image: GOLD CentOS 6
-        #key_name: 
+        image: GOLD Ubuntu 16.04 LTS
+        key_name: ansible_keypair
         wait: yes
-        flavor: m1.small # m1.tiny, m1.small, m1.medium, m1.large
+        flavor: m1.small 
         auto_floating_ip: yes
-        network: dualStack # dualStack, IPv6
+        network: dualStack
+    - name: Create new keypair from .ssh catalog
+      os_keypair:
+        state: present
+        name: ansible_keypair
+        public_key_file: "{{ '~' | expanduser }}/.ssh/id_rsa.pub"
+    - name: Enable SSH access
+      os_security_group_rule:
+        security_group: default
+        protocol: tcp
+        port_range_min: 22
+        port_range_max: 22
+        remote_ip_prefix: 0.0.0.0/0
+
+
+

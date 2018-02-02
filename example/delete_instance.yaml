@@ -1,4 +1,5 @@
 # Delete an instance
+
 - name: Delete an instance
   hosts: localhost
   become: no
@@ -8,7 +9,7 @@
         state: absent
         name: vm
         image: GOLD CentOS 6
-        #key_name: keyuhosl
+        key_name: keyuhosl
         wait: yes
         flavor: m1.small
         auto_floating_ip: yes

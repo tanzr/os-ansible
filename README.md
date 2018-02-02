@@ -3,7 +3,7 @@ Using openstack-ansible for the deployment and configuration of an OpenStack env
 
 ## Prerequirements
   - ansible
-  - python 2.7
+  - python >= 2.7
   - python-openstackclient
   - python-heatclient
   - shade

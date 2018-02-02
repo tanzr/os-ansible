@@ -1,13 +1,9 @@
 # Delete a volume
-- name: Detach and delete a volume from a host
+# If the volume is attached to a host, you should first detach the volume (run manage_volume.yaml)
+
+- name: Delete a volume from a host 
   hosts: localhost
   tasks:
-  - name: Detach a volume 
-    os_server_volume:
-      state: absent
-      server: vm
-      volume: testvolume
-      device: /dev/sdb
   - name: Delete a volume
     os_volume:
       state: absent

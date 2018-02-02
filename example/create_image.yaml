@@ -1,4 +1,5 @@
-# Create an image
+# Create an new image
+
 - name: Download and create an image 
   hosts: localhost
   become: no
