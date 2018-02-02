@@ -1,0 +1,9 @@
+# Attach and deatach a volume
+- name: Detach or attach a volume
+  hosts: localhost
+  tasks:
+  - name: Manage attachments
+    os_server_volume:
+      state: absent #absent to remove, present to add
+      server: vm
+      volume: testvolume

@@ -1,0 +1,16 @@
+# Create a new volume
+- name: Create and attach a volume to a host
+  hosts: localhost
+  tasks:
+  - name: Create a volume
+    os_volume:
+      state: present
+      name: testvolume
+      size: 2 #GB
+      availability_zone: nova
+  - name: Attach a volume 
+    os_server_volume:
+      state: present
+      server: vm
+      volume: testvolume
+      device: /dev/sdb
