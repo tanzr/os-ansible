@@ -1,0 +1,12 @@
+# Attach a volume
+# To attach a volume set the state to be present, and absent to detach
+
+- name: Attach a volume
+  hosts: localhost
+  tasks:
+  - name: Manage attachments
+    os_server_volume:
+      state: present 
+      server: vm
+      volume: testvolume
+      device: /dev/sdb

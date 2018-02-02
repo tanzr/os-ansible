@@ -1,4 +1,4 @@
-# Launch an instance
+# Create a compute instances from OpenStack
 # Flavor list: m1.tiny, m1.small, m1.medium, m1.large
 # Network list: dualStack, IPv6
 # Image list: e.g. GOLD CentOS 7, GOLD Fedora 27, GOLD Ubuntu 17.04, GOLD Debian 9

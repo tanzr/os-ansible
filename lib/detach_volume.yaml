@@ -1,7 +1,7 @@
-# Attach and detach a volume
+# Detach a volume
 # To attach a volume set the state to be present, and absent to detach
 
-- name: Detach or attach a volume
+- name: Detach a volume
   hosts: localhost
   tasks:
   - name: Manage attachments
