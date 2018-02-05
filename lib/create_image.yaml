@@ -8,7 +8,7 @@
       get_url:
         url: http://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img
         dest: /tmp/cirros-0.4.0-x86_64-disk.img
-    - name: Create an image to Openstack
+    - name: Create an image and upload it to Openstack
       os_image:
         name: cirros-ansible
         container_format: bare
