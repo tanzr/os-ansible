@@ -10,7 +10,7 @@ Using openstack-ansible for the deployment and configuration of an OpenStack env
 
 
 ## Run
-Create a keystone_rc.sh file as described here: http://docs.uh-iaas.no/en/latest/api.html#openstack-command-line-interface-cli
+Create a `keystone_rc.sh` file as described here: http://docs.uh-iaas.no/en/latest/api.html#openstack-command-line-interface-cli
 
 ```bash
 source keystone_rc.sh
